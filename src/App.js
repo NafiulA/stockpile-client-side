@@ -3,9 +3,9 @@ import './App.css';
 import Login from './components/authentication/Login/Login';
 import Register from './components/authentication/Register/Register';
 import Home from './components/homepage/Home/Home';
-import InventoryItem from './components/homepage/InventoryItem/InventoryItem';
 import AddItem from './components/management/AddItem/AddItem';
 import ManageInventory from './components/management/ManageInventory/ManageInventory';
+import ManageItem from './components/management/ManageItem/ManageItem';
 import MyItems from './components/management/MyItems/MyItems';
 import Blogs from './components/others/Blogs/Blogs';
 import Contact from './components/others/Contact/Contact';
@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/inventory/:id' element={<InventoryItem></InventoryItem>}></Route>
+        <Route path='/inventory/:id' element={<ManageItem></ManageItem>}></Route>
         <Route path='/manageinventories' element={<ManageInventory></ManageInventory>}></Route>
         <Route path='/additem' element={<AddItem></AddItem>}></Route>
         <Route path='/myitems' element={<MyItems></MyItems>}></Route>

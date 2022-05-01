@@ -7,8 +7,8 @@ import "./Testimonials.css";
 const Testimonials = () => {
     return (
         <div className='py-8 testimonial'>
-            <h3 className='text-4xl font-bold text-slate-800 text-center py-2'>Reviews</h3>
-            <p className='text-2xl text-gray-800 text-center pb-4'>Here's what some of our users think about us!</p>
+            <h3 className='text-4xl font-bold text-slate-800 text-center'>Reviews</h3>
+            <p className='text-2xl text-gray-800 text-center pb-4 pt-3'>Here's what some of our users think about us!</p>
             <div id="carouselExampleCaptions" className="carousel slide relative carousel-dark" data-bs-ride="carousel">
                 <div className="carousel-inner relative w-full overflow-hidden">
                     <div className="carousel-item active relative float-left w-full text-center">

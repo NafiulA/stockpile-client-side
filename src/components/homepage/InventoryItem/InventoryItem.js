@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 
 const InventoryItem = ({ product }) => {
     const { _id, name, description, img, price, quantity, supplierName } = product;
-    console.log(product)
 
     const navigate = useNavigate();
     return (

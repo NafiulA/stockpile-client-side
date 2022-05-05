@@ -1,8 +1,12 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from "firebase/auth";
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import "./Header.css";
 
 const Header = () => {
+    const [user] = useAuthState(auth)
     return (
         <div>
             <nav className="fixed w-full flex flex-wrap items-center justify-between py-4 bg-slate-200 text-gray-500 hover:text-gray-700 focus:text-gray-700 shadow-lg navbar navbar-expand-lg navbar-light">
@@ -35,15 +39,19 @@ const Header = () => {
         text-3xl
         titleText font-bold" to="/">Stockpile</Link>
                         <ul className="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
-                            <li className="nav-item lg:ml-4 p-2">
-                                <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="//myitems">Manage Inventories</Link>
-                            </li>
-                            <li className="nav-item p-2">
-                                <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="//myitems">Add Items</Link>
-                            </li>
-                            <li className="nav-item p-2">
-                                <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="//myitems">My Items</Link>
-                            </li>
+                            {user &&
+                                <>
+                                    <li className="nav-item lg:ml-4 p-2">
+                                        <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="//myitems">Manage Inventories</Link>
+                                    </li>
+                                    <li className="nav-item p-2">
+                                        <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="//myitems">Add Items</Link>
+                                    </li>
+                                    <li className="nav-item p-2">
+                                        <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="//myitems">My Items</Link>
+                                    </li>
+                                </>
+                            }
                             <li className="nav-item p-2">
                                 <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="/blogs">Blogs</Link>
                             </li>
@@ -54,7 +62,7 @@ const Header = () => {
                     </div>
 
                     <div className="flex items-center relative">
-                        <Link to="/login" >Login</Link>
+                        {user ? <><button onClick={() => { signOut(auth) }}><p>Log Out</p></button></> : <Link to="/login" >Login</Link>}
                     </div>
                 </div>
             </nav>

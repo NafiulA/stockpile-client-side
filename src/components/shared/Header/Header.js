@@ -42,13 +42,13 @@ const Header = () => {
                             {user &&
                                 <>
                                     <li className="nav-item lg:ml-4 p-2">
-                                        <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="//myitems">Manage Inventories</Link>
+                                        <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="/manageinventories">Manage Inventories</Link>
                                     </li>
                                     <li className="nav-item p-2">
-                                        <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="//myitems">Add Items</Link>
+                                        <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="/additems">Add Items</Link>
                                     </li>
                                     <li className="nav-item p-2">
-                                        <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="//myitems">My Items</Link>
+                                        <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="/myitems">My Items</Link>
                                     </li>
                                 </>
                             }
@@ -56,7 +56,8 @@ const Header = () => {
                                 <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="/blogs">Blogs</Link>
                             </li>
                             <li className="nav-item p-2">
-                                <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to=" /contact">Contact</Link>
+                                <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                                    to="/contact">Contact</Link>
                             </li>
                         </ul>
                     </div>

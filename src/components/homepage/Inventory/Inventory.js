@@ -14,7 +14,7 @@ const Inventory = () => {
     }, [])
     return (
         <div className='py-8'>
-            <h3 className='text-4xl font-bold text-slate-800 text-center py-2'>Our Features</h3>
+            <h3 className='text-4xl font-bold text-slate-800 text-center py-2'>Inventories</h3>
 
             <div className='w-11/12 py-4 md:w-3/4 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {

@@ -11,6 +11,7 @@ import ManageItem from './components/management/ManageItem/ManageItem';
 import MyItems from './components/management/MyItems/MyItems';
 import Blogs from './components/others/Blogs/Blogs';
 import Contact from './components/others/Contact/Contact';
+import NotFound from './components/others/NotFound/NotFound';
 import Footer from './components/shared/Footer/Footer';
 import Header from './components/shared/Header/Header';
 
@@ -29,6 +30,7 @@ function App() {
         <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
       <Toaster></Toaster>

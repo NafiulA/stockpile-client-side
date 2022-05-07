@@ -53,6 +53,7 @@ const ManageItem = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 <div className='p-4 mt-24 md:mt-0'>
                     <img className='w-2/3 mx-auto' src={img} alt="" />
+                    <p>ID: {id.id}</p>
                     <p className='text-3xl py-2 font-semibold'>{name}</p>
                     <p className='text-lg font-semibold'>{description}</p>
                     <p className='text-xl py-2'>Price: {price}<span className='text-md text-gray-600'>/unit</span></p>

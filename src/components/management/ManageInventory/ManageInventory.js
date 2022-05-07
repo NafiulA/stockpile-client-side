@@ -11,7 +11,7 @@ const ManageInventory = () => {
     const [page, setPage] = useState(0);
     const navigate = useNavigate();
     useEffect(() => {
-        fetch(`http://localhost:5000/products?size=10&page=${page}`)
+        fetch(`http://localhost:5000/inventories?size=10&page=${page}`)
             .then(res => res.json())
             .then(data => {
                 setInventories(data)
@@ -57,7 +57,7 @@ const ManageInventory = () => {
                                 <thead className="border-b">
                                     <tr>
                                         <th scope="col" className="text-sm text-center font-medium text-gray-900 px-2 py-4 border-r">
-                                            #Id
+                                            #
                                         </th>
                                         <th scope="col" className="text-sm text-center font-medium text-gray-900 px-2 py-4 border-r">
                                             Name

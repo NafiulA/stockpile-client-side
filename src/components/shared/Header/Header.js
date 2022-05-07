@@ -45,7 +45,7 @@ const Header = () => {
                                         <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="/manageinventories">Manage Inventories</Link>
                                     </li>
                                     <li className="nav-item p-2">
-                                        <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="/additems">Add Items</Link>
+                                        <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="/additem">Add Items</Link>
                                     </li>
                                     <li className="nav-item p-2">
                                         <Link className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" to="/myitems">My Items</Link>

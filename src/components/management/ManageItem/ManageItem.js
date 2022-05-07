@@ -15,7 +15,7 @@ const ManageItem = () => {
                 setItem(data);
                 setQuantity(data.quantity);
             })
-    }, []);
+    }, [id.id]);
     const { img, name, description, price, supplierName } = item;
 
     const handleQuantity = event => {
@@ -31,7 +31,7 @@ const ManageItem = () => {
             amount = "-1";
         }
 
-        fetch(`http://localhost:5000/addquantity/${id.id}?incAmount=${amount}`, {
+        fetch(`http://localhost:5000/updatequantity/${id.id}?incAmount=${amount}`, {
             method: "PUT",
             headers: {
                 "Content-type": "application/json"

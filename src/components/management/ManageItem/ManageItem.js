@@ -28,7 +28,12 @@ const ManageItem = () => {
             amount = inputQuantity;
         }
         else {
-            amount = "-1";
+            if (quantity > 0) {
+                amount = "-1";
+            }
+            else {
+                return toast("Item is sold out and cannot be delivered", { id: "delivered" });
+            }
         }
 
         fetch(`https://limitless-harbor-66423.herokuapp.com/updatequantity/${id.id}?incAmount=${amount}`, {

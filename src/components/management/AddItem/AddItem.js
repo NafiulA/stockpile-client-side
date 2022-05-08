@@ -46,12 +46,22 @@ const AddItem = () => {
     }
 
     const onSubmit = data => {
+        const body = {
+            userEmail: data.userEmail,
+            name: data.name,
+            description: data.description,
+            supplierName: data.supplierName,
+            price: parseInt(data.price),
+            quantity: parseInt(data.quantity),
+            img: data.img
+        };
+
         fetch("https://limitless-harbor-66423.herokuapp.com/additem", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(body)
         })
             .then(res => res.json())
             .then(data => {

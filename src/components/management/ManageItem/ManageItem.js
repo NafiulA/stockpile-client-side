@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 const ManageItem = () => {
@@ -59,7 +59,7 @@ const ManageItem = () => {
                     <p className='text-xl py-2'>Price: {price}<span className='text-md text-gray-600'>/unit</span></p>
                     <p className='text-xl pb-2'>Quantity: {quantity}</p>
                     <p className='text-xl'>Supplier: {supplierName}</p>
-                    <button onClick={() => handleDelivered("neg")} className='mt-4 py-2 px-6 text-white text-lg bg-blue-900 hover:bg-blue-600 rounded-xl'>Delivered</button>
+                    <button onClick={() => handleDelivered("neg")} className='mt-4 py-2 px-6 text-white text-lg bg-blue-900 hover:bg-blue-600 rounded'>Delivered</button>
                 </div>
                 <div className='p-4'>
                     <h3 className='text-2xl font-bold text-slate-800 text-center py-2'>Update quantity</h3>
@@ -89,14 +89,18 @@ const ManageItem = () => {
       bg-blue-900
       text-white
       font-medium
-      text-xs
+      text-lg
       leading-tight
       uppercase
       rounded
       shadow-md
       hover:bg-blue-600 hover:shadow-lg">Update</button>
                     </div>
-
+                    <div>
+                        <button className='py-2 px-4 bg-blue-900 hover:bg-blue-600 text-lg text-center text-white rounded'>
+                            <Link to="/manageinventories"> Manage Inventories</Link>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

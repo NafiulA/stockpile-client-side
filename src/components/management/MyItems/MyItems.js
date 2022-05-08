@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListCheck, faTrash } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
@@ -24,6 +24,7 @@ const MyItems = () => {
             if (res.status === 403) {
                 signOut(auth);
                 localStorage.removeItem("accessToken");
+                toast.error("Forbidden access. Please Login or register!", { id: "accessError" })
             }
             else {
                 let data = await res.json();
@@ -131,10 +132,18 @@ const MyItems = () => {
                     </div>
                 </div>
             </div>
-            <div className='text-center py-4'>
-                {
-                    [...Array(pageCount).keys()].map(num => <button className={page === num ? "bg-blue-900 text-white p-2 rounded-lg hover:bg-blue-600 mr-2" : "p-2 rounded-lg mr-2 hover:bg-gray-400"} onClick={() => setPage(num)} key={num}>{num + 1}</button>)
-                }
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4 w-3/4 mx-auto justify-items-center">
+                <div className='flex items-center'>
+                    <p className='text-lg mr-2'>Pages:</p>
+                    {
+                        [...Array(pageCount).keys()].map(num => <button className={page === num ? "bg-blue-900 text-white p-2 rounded-lg hover:bg-blue-600 mr-2" : "p-2 rounded-lg mr-2 hover:bg-gray-400"} onClick={() => setPage(num)} key={num}>{num + 1}</button>)
+                    }
+                </div>
+                <div>
+                    <button className='py-2 px-4 bg-blue-900 hover:bg-blue-600 text-lg text-center text-white rounded-lg'>
+                        <Link to="/additem"> Add new Item</Link>
+                    </button>
+                </div>
             </div>
         </div>
     );

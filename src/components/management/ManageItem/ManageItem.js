@@ -9,7 +9,7 @@ const ManageItem = () => {
     const [quantity, setQuantity] = useState(0);
     const [inputQuantity, setInputQuantity] = useState('');
     useEffect(() => {
-        fetch(`http://localhost:5000/inventory/${id.id}`)
+        fetch(`https://limitless-harbor-66423.herokuapp.com/inventory/${id.id}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data);
@@ -31,7 +31,7 @@ const ManageItem = () => {
             amount = "-1";
         }
 
-        fetch(`http://localhost:5000/updatequantity/${id.id}?incAmount=${amount}`, {
+        fetch(`https://limitless-harbor-66423.herokuapp.com/updatequantity/${id.id}?incAmount=${amount}`, {
             method: "PUT",
             headers: {
                 "Content-type": "application/json"

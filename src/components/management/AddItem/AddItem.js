@@ -46,7 +46,7 @@ const AddItem = () => {
     }
 
     const onSubmit = data => {
-        fetch("http://localhost:5000/additem", {
+        fetch("https://limitless-harbor-66423.herokuapp.com/additem", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"

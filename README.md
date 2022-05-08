@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Stockpile
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an inventory management website. User logged in the website can manage their inventories. They can add, update or delete their inventories. It's front-end is built with React and for server-side, nodejs, express and mongoDB in used. Here are some facts about the website:
 
-## Available Scripts
+* React router is used here to eliminate reloading of the website.
+* private route is used here for inventory management pages.
+* Firebase authentication is implemented in in this website. User can login using email password or use social login like google,facebook and github.
+* react firebase hooks are used here to simplify firebase implementation.
+* mongoDB is used as the database for inventories.
+* nodejs and expressjs is used to make APIs for the website. 
+* JWT is used to secure it's user specific inventory retrieving API.
 
-In the project directory, you can run:
+### Here are some technologies that are used to build this website:
+* HTML
+* Tailwind css
+* JavaScript
+* Hero Icons
+* FontAwesome Icons
+* React
+* React hot toast
+* Firebase 
+* JWT
+* NodeJS
+* ExpressJS
+* MongoDB
 
-### `npm start`
+## live site link
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Please [click here](https://stockpile-2e1cb.web.app/) or the link below to check out the live site.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## https://stockpile-2e1cb.web.app/

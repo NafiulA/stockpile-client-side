@@ -9,7 +9,7 @@ const Inventory = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:5000/inventories?size=6")
+        fetch("https://limitless-harbor-66423.herokuapp.com/inventories?size=6")
             .then(res => res.json())
             .then(data => {
                 setProducts(data);

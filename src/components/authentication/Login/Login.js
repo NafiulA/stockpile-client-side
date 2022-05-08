@@ -100,7 +100,7 @@ const Login = () => {
         toast.success("Login Successful", { id: "login" })
 
         if (user) {
-            fetch('http://localhost:5000/gettoken', {
+            fetch('https://limitless-harbor-66423.herokuapp.com/gettoken', {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
@@ -114,7 +114,7 @@ const Login = () => {
                 })
         }
         if (googleUser) {
-            fetch('http://localhost:5000/gettoken', {
+            fetch('https://limitless-harbor-66423.herokuapp.com/gettoken', {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
@@ -128,7 +128,7 @@ const Login = () => {
                 })
         }
         if (facebookUser) {
-            fetch('http://localhost:5000/gettoken', {
+            fetch('https://limitless-harbor-66423.herokuapp.com/gettoken', {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
@@ -142,7 +142,7 @@ const Login = () => {
                 })
         }
         if (githubUser) {
-            fetch('http://localhost:5000/gettoken', {
+            fetch('https://limitless-harbor-66423.herokuapp.com/gettoken', {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"

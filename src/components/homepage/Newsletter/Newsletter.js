@@ -13,7 +13,7 @@ const Newsletter = () => {
     }
     const onSubmit = data => {
         const body = { email: data.email };
-        fetch("http://localhost:5000/newsletterEmails", {
+        fetch("https://limitless-harbor-66423.herokuapp.com/newsletterEmails", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"

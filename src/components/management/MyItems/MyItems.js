@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
@@ -14,11 +15,24 @@ const MyItems = () => {
     const [page, setPage] = useState(0);
     const navigate = useNavigate();
     useEffect(() => {
-        fetch(`http://localhost:5000/myitem?email=${email}&size=10&page=${page}`)
-            .then(res => res.json())
-            .then(data => {
-                setInventories(data)
-            })
+        async function getData() {
+            let res = await fetch(`http://localhost:5000/myitem?email=${email}&size=10&page=${page}`, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem("accessToken")}`
+                }
+            });
+            if (res.status === 403) {
+                signOut(auth);
+                localStorage.removeItem("accessToken");
+            }
+            else {
+                let data = await res.json();
+                setInventories(data);
+            }
+        }
+        getData();
+
+
     }, [page, email]);
 
     const handleDelete = id => {
@@ -81,7 +95,7 @@ const MyItems = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {inventories.map(inventory => {
+                                    {inventories?.map(inventory => {
                                         return (
 
                                             <tr key={inventory._id} className="border-b">

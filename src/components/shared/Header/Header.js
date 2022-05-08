@@ -6,7 +6,11 @@ import auth from '../../../firebase.init';
 import "./Header.css";
 
 const Header = () => {
-    const [user] = useAuthState(auth)
+    const [user] = useAuthState(auth);
+    const handleSignOut = () => {
+        signOut(auth);
+        localStorage.removeItem("accessToken");
+    }
     return (
         <div>
             <nav className="fixed w-full flex flex-wrap items-center justify-between py-4 bg-slate-200 text-gray-500 hover:text-gray-700 focus:text-gray-700 shadow-lg navbar navbar-expand-lg navbar-light">
@@ -63,7 +67,7 @@ const Header = () => {
                     </div>
 
                     <div className="flex items-center relative">
-                        {user ? <><button onClick={() => { signOut(auth) }}><p>Log Out</p></button></> : <Link to="/login" >Login</Link>}
+                        {user ? <><button onClick={handleSignOut}><p>Log Out</p></button></> : <Link to="/login" >Login</Link>}
                     </div>
                 </div>
             </nav>

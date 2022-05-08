@@ -47,7 +47,10 @@ const Register = () => {
         if (data.password === data.confirmPassword) {
             createUserWithEmailAndPassword(data.email, data.password);
         }
-        toast.error("Confirm your password", { id: "createError" });
+        else {
+
+            toast.error("Confirm your password", { id: "createError" });
+        }
     }
     if (loading) {
         return <Loading></Loading>
@@ -91,7 +94,64 @@ const Register = () => {
     }
     if (user || googleUser || facebookUser || githubUser) {
         toast.success("Login Successful", { id: "login" })
-        navigate(from, { replace: true });
+
+        if (user) {
+            fetch('http://localhost:5000/gettoken', {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify({ email: user.user.email })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    localStorage.setItem("accessToken", data.jwtToken);
+                    navigate(from, { replace: true });
+                })
+        }
+        if (googleUser) {
+            fetch('http://localhost:5000/gettoken', {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify({ email: googleUser.user.email })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    localStorage.setItem("accessToken", data.jwtToken);
+                    navigate(from, { replace: true });
+                })
+        }
+        if (facebookUser) {
+            fetch('http://localhost:5000/gettoken', {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify({ email: facebookUser.user.email })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    localStorage.setItem("accessToken", data.jwtToken);
+                    navigate(from, { replace: true });
+                })
+        }
+        if (githubUser) {
+            fetch('http://localhost:5000/gettoken', {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify({ email: githubUser.user.email })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    localStorage.setItem("accessToken", data.jwtToken);
+                    navigate(from, { replace: true });
+                })
+        }
+
     }
     return (
         <div className='min-h-screen flex justify-center items-center'>

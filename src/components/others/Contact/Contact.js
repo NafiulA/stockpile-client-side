@@ -58,7 +58,7 @@ const Contact = () => {
                             />
                             <Marker position={position}>
                                 <Popup>
-                                    GymWhale
+                                    Stockpile
                                 </Popup>
                             </Marker>
                         </MapContainer>

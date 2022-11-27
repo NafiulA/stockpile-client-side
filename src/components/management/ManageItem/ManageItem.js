@@ -9,7 +9,7 @@ const ManageItem = () => {
     const [quantity, setQuantity] = useState(0);
     const [inputQuantity, setInputQuantity] = useState('');
     useEffect(() => {
-        fetch(`https://limitless-harbor-66423.herokuapp.com/inventory/${id.id}`)
+        fetch(`https://stockpile.onrender.com/inventory/${id.id}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data);
@@ -36,7 +36,7 @@ const ManageItem = () => {
             }
         }
 
-        fetch(`https://limitless-harbor-66423.herokuapp.com/updatequantity/${id.id}?incAmount=${amount}`, {
+        fetch(`https://stockpile.onrender.com/updatequantity/${id.id}?incAmount=${amount}`, {
             method: "PUT",
             headers: {
                 "Content-type": "application/json"

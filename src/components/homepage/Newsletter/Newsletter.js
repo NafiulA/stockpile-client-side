@@ -13,7 +13,7 @@ const Newsletter = () => {
     }
     const onSubmit = data => {
         const body = { email: data.email };
-        fetch("https://limitless-harbor-66423.herokuapp.com/newsletterEmails", {
+        fetch("https://stockpile.onrender.com/newsletterEmails", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"

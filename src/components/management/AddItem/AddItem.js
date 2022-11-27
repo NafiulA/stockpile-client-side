@@ -56,7 +56,7 @@ const AddItem = () => {
             img: data.img
         };
 
-        fetch("https://limitless-harbor-66423.herokuapp.com/additem", {
+        fetch("https://stockpile.onrender.com/additem", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"

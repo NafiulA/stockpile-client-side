@@ -11,7 +11,7 @@ const ManageInventory = () => {
     const [page, setPage] = useState(0);
     const navigate = useNavigate();
     useEffect(() => {
-        fetch(`https://limitless-harbor-66423.herokuapp.com/inventories?size=10&page=${page}`)
+        fetch(`https://stockpile.onrender.com/inventories?size=10&page=${page}`)
             .then(res => res.json())
             .then(data => {
                 setInventories(data)
@@ -22,7 +22,7 @@ const ManageInventory = () => {
         const consent = window.confirm("Are you sure?");
         if (consent) {
 
-            fetch(`https://limitless-harbor-66423.herokuapp.com/deleteinventory/${id}`, {
+            fetch(`https://stockpile.onrender.com/deleteinventory/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -38,7 +38,7 @@ const ManageInventory = () => {
     }
 
     useEffect(() => {
-        fetch("https://limitless-harbor-66423.herokuapp.com/inventoryCount")
+        fetch("https://stockpile.onrender.com/inventoryCount")
             .then(res => res.json())
             .then(data => {
                 const count = data.count;

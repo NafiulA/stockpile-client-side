@@ -16,7 +16,7 @@ const MyItems = () => {
     const navigate = useNavigate();
     useEffect(() => {
         async function getData() {
-            let res = await fetch(`https://limitless-harbor-66423.herokuapp.com/myitem?email=${email}&size=10&page=${page}`, {
+            let res = await fetch(`https://stockpile.onrender.com/myitem?email=${email}&size=10&page=${page}`, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem("accessToken")}`
                 }
@@ -40,7 +40,7 @@ const MyItems = () => {
         const consent = window.confirm("Are you sure?");
         if (consent) {
 
-            fetch(`https://limitless-harbor-66423.herokuapp.com/deleteinventory/${id}`, {
+            fetch(`https://stockpile.onrender.com/deleteinventory/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -56,7 +56,7 @@ const MyItems = () => {
     };
 
     useEffect(() => {
-        fetch(`https://limitless-harbor-66423.herokuapp.com/myitemCount?email=${email}`)
+        fetch(`https://stockpile.onrender.com/myitemCount?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 const count = data.count;

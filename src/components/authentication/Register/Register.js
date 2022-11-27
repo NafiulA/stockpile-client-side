@@ -96,7 +96,7 @@ const Register = () => {
         toast.success("Login Successful", { id: "login" })
 
         if (user) {
-            fetch('https://limitless-harbor-66423.herokuapp.com/gettoken', {
+            fetch('https://stockpile.onrender.com/gettoken', {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
@@ -110,7 +110,7 @@ const Register = () => {
                 })
         }
         if (googleUser) {
-            fetch('https://limitless-harbor-66423.herokuapp.com/gettoken', {
+            fetch('https://stockpile.onrender.com/gettoken', {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
@@ -124,7 +124,7 @@ const Register = () => {
                 })
         }
         if (facebookUser) {
-            fetch('https://limitless-harbor-66423.herokuapp.com/gettoken', {
+            fetch('https://stockpile.onrender.com/gettoken', {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
@@ -138,7 +138,7 @@ const Register = () => {
                 })
         }
         if (githubUser) {
-            fetch('https://limitless-harbor-66423.herokuapp.com/gettoken', {
+            fetch('https://stockpile.onrender.com/gettoken', {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
